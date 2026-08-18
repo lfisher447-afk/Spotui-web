@@ -1,0 +1,34 @@
+{
+  "version": 2,
+  "framework": "vite",
+  "buildCommand": "vite build",
+  "outputDirectory": "dist",
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "Access-Control-Allow-Origin", "value": "*" },
+        { "key": "Access-Control-Allow-Methods", "value": "GET, POST, PUT, DELETE, OPTIONS" },
+        { "key": "Access-Control-Allow-Headers", "value": "*" },
+        { "key": "Cross-Origin-Opener-Policy", "value": "same-origin-allow-popups" }
+      ]
+    },
+    {
+      "source": "/sw-proxy.js",
+      "headers": [
+        { "key": "Service-Worker-Allowed", "value": "/" },
+        { "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" }
+      ]
+    }
+  ],
+  "rewrites": [
+    { "source": "/api/proxy", "destination": "/api/proxy" },
+    { "source": "/api/health", "destination": "/api/health" },
+    { "source": "/api/nodes/status", "destination": "/api/nodes-status" },
+    { "source": "/api/audio/stream", "destination": "/api/audio-stream" },
+    { "source": "/api/auth/spotify/url", "destination": "/api/auth-spotify-url" },
+    { "source": "/api/auth/spotify/token", "destination": "/api/auth-spotify-token" },
+    { "source": "/api/ws-tunnel", "destination": "/api/ws-tunnel" },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}

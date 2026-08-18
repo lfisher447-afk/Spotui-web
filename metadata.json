@@ -1,0 +1,6 @@
+{
+  "name": "Spotui Signal Room",
+  "description": "Ultra-advanced music platform featuring offline-first Web Audio DSP, Spotify and YouTube Music sync, Innertube search & streaming, ShazamKit recognition, unblocked proxy browsing, and stealth cloaking.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
